@@ -31,7 +31,17 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-argument': 'warn',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/explicit-function-return-types': 'off',
-      '@typescript-eslint/interface-name-prefix': 'off',
+      '@typescript-eslint/naming-convention': [
+  'error',
+  {
+    selector: 'interface',
+    format: ['PascalCase'],
+    custom: {
+      regex: '^I[A-Z]',
+      match: true,
+    },
+  },
+],
       "prettier/prettier": ["error", { endOfLine: "auto", singleQuote: true, semi: true, trailingComma: "all" }],
     },
   },
